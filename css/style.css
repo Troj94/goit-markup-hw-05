@@ -59,9 +59,7 @@ body {
 .navigation-list a {
     font-weight: 500;
     color: var(--common-text);
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier (0.4, 0, 0.2, 1);
-
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);    ;
 }
 
 .active a {
@@ -85,9 +83,6 @@ body {
 .header-contacts :focus {
     color: var(--hover-text);
     fill: var(--hover-text);
-
-    /* transition-duration: 250ms;
-    transition-timing-function: cubic-bezier (0.4, 0, 0.2, 1); */
 }
 
 .header-contacts {
@@ -100,9 +95,7 @@ body {
 }
 
 .header-list a {
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier (0.4, 0, 0.2, 1);
-
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-list svg {
@@ -119,9 +112,7 @@ body {
 .contacts-text svg:hover {
     color: var(--hover-text);
     fill: currentColor;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier (0.4, 0, 0.2, 1);
-
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link-block {
@@ -352,6 +343,8 @@ body {
     height: 294px;
     margin-right: 30px;
     margin-bottom: 0;
+
+    position: relative;
 }
 
 .gallery-item img{
@@ -372,8 +365,11 @@ body {
     height: 70px;
     background-color: rgba(47, 48, 58, 0.8);
 
-    position: relative;
-    bottom: 70px;
+    /* position: relative;
+    bottom: 70px; */
+
+    position: absolute;
+    bottom: 0;
 }
 
 .gallery-item-name {
@@ -486,19 +482,14 @@ body {
     border-radius: 50%;
     fill: var(--socials-color);
 
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier (0.4, 0, 0.2, 1);
-
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-link:hover,
 .social-link:focus {
     background-color: var(--hover-text);
     fill: var(--white-text);
-
-    /* transition-duration: 250ms;
-    transition-timing-function: cubic-bezier (0.4, 0, 0.2, 1); */
-
 }
 
 .social-link svg {
@@ -533,8 +524,8 @@ body {
 
     color: var(--socials-color);
 
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier (0.4, 0, 0.2, 1);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
@@ -547,10 +538,6 @@ body {
     border: 1px solid var(--hover-text);
     cursor: pointer;
     color: var(--hover-text);
-
-    /* transition-duration: 250ms;
-    transition-timing-function: cubic-bezier (0.4, 0, 0.2, 1); */
-
 }
 
 .client-icon {
@@ -564,8 +551,8 @@ body {
 .client-icon:hover,
 .client-icon:focus {
     fill: currentColor;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier (0.4, 0, 0.2, 1);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Подвал */
@@ -617,8 +604,7 @@ body {
 .footer-list a:hover,
 .footer-list a:focus {
     color: var(--hover-text);
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier (0.4, 0, 0.2, 1);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-list {
@@ -703,9 +689,8 @@ body {
     border: none;
     border-radius: 4px;
 
-    transition-property: background-color, color;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .all {
@@ -721,9 +706,6 @@ body {
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
         0px 1px 2px rgba(0, 0, 0, 0.08),
         0px 2px 2px rgba(0, 0, 0, 0.12);
-
-    /* transition-duration: 250ms;
-    transition-timing-function: cubic-bezier (0.4, 0, 0.2, 1); */
 }
 
 /* Карточки */
@@ -759,9 +741,6 @@ body {
 
     position: relative;
     overflow: hidden;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier (0.4, 0, 0.2, 1);
-
 }
 
 .projects-item:hover,
@@ -771,6 +750,10 @@ body {
         1px 4px 6px rgba(0, 0, 0, 0.16);
 
     cursor: pointer;
+}
+
+.projects-item:hover .overlay{
+    transform: translateY(-100%);
 }
 
 .overlay-thumb {
@@ -795,11 +778,6 @@ body {
     margin-bottom: 100px;
 
     transition-duration: 250ms;
-    transition-timing-function: cubic-bezier (0.4, 0, 0.2, 1);
-}
-
-.overlay:hover {
-    transform: translateY(-100%);
 }
 
 .overlay-text {
